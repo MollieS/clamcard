@@ -3,6 +3,14 @@ feature 'travelling in zone one' do
     card = Card.new
     network = Network.new
     network.touch(card, 'Asterisk', 'Aldgate')
-    expect(card.charge).to eq 2.50
+    expect(card.balance).to eq 2.50
+  end
+
+  scenario 'two journeys' do
+    card = Card.new
+    network = Network.new
+    network.touch(card, 'Asterisk', 'Aldgate')
+    network.touch(card, 'Aldgate', 'Antelope')
+    expect(card.balance).to eq 5.00
   end
 end

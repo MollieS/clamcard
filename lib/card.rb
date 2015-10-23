@@ -1,5 +1,13 @@
 class Card
-  def charge
-    2.50
+
+  attr_reader :balance
+
+  def initialize
+    @balance = 0
   end
+
+  def charge(amount)
+    @balance += amount
+  end
+
 end
