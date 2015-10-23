@@ -11,7 +11,7 @@ class Network
             }
 
   def touch card, start, destination
-    card.charge(calculate_cost(destination))
+    card.charge(calculate_cost(start, destination))
   end
 
   def stations
@@ -22,14 +22,16 @@ class Network
     PRICES
   end
 
-  def calculate_cost destination
-    PRICES[destination_zone(destination)]
+  def calculate_cost start, destination
+    return PRICES[:zone_one] if station_zone(start) == :zone_one && station_zone(destination) == :zone_one
+    PRICES[:zone_two]
   end
 
   private
 
-  def destination_zone destination
-    return :zone_one if STATIONS[:zone_one].include?(destination)
+  def station_zone station
+    return :zone_one if STATIONS[:zone_one].include?(station)
     :zone_two
   end
+
 end

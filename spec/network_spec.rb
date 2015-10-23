@@ -19,11 +19,15 @@ describe Network do
     end
 
     it 'calculates the correct price for a zone_one journey' do
-      expect(subject.calculate_cost('Antelope')).to eq(subject.prices[:zone_one])
+      expect(subject.calculate_cost('Angel', 'Antelope')).to eq(subject.prices[:zone_one])
     end
 
     it 'calculates the correct price for a zone_two journey' do
-      expect(subject.calculate_cost('Bugel')).to eq(subject.prices[:zone_two])
+      expect(subject.calculate_cost('Barbican', 'Bugel')).to eq(subject.prices[:zone_two])
+    end
+
+    it 'calculates the correct price when travelling from zone_two to zone_one' do
+      expect(subject.calculate_cost('Barbican', 'Angel')).to eq(subject.prices[:zone_two])
     end
   end
 end
