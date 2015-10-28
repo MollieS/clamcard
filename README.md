@@ -62,3 +62,16 @@ And a further £0.00 for any additional journies within the day
 Credit for the original design of this kata to [Amir Bazazi](https://github.com/amiralibazazi)
 
 Bonus scenarios [here](https://gist.github.com/amiralibazazi/a9d57d40886604887d8e)
+
+###Completed so far
+
+- All basic user stories have passing tests
+- A user can travel within zone A or zone B, or between the two, and be charged
+  correctly
+- A user has a day cap on their card
+
+###Considerations
+
+- Currently only have two objects: Network and Card.  I would like to change
+  this so that each Station is an object and transfer the knowledge of which
+  zone it is in to the station object.
