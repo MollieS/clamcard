@@ -1,7 +1,6 @@
 require 'card'
 
 describe Card do
-
   let (:card) { Card.new }
 
   it { is_expected.to respond_to(:charge).with(1).argument }

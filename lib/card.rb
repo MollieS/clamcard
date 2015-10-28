@@ -1,5 +1,4 @@
 class Card
-
   attr_reader :balance
 
   def initialize
@@ -10,5 +9,4 @@ class Card
     @balance += amount
     @balance = 7 if @balance > 7
   end
-
 end
