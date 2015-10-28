@@ -8,6 +8,7 @@ class Card
 
   def charge(amount)
     @balance += amount
+    @balance = 7 if @balance > 7
   end
 
 end
